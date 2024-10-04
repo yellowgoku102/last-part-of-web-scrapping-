@@ -19,8 +19,8 @@ for file in os.listdir("data"):
             p = soup.find("span", attrs={"class" :"a-price-whole"})
             price = p.get_text()
             d["title"].append(title)
-            d["title"].append(link)
-            d["title"].append(price)
+            d["price"].append(price)
+            d["link"].append(link)
 
 
 
@@ -31,4 +31,4 @@ for file in os.listdir("data"):
 
 
 df = pd.DataFrame(data = d)  
-df.to_csv("data.csv")  
+df.to_csv("data.csv")       
